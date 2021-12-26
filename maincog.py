@@ -24,9 +24,12 @@ class MainCog(commands.Cog):
 
 	@commands.Cog.listener()
 	async def on_ready(self):
+    IDLE_COLOR = [0, 255, 255]
 		while(self.channel == None):
 			self.channel = self.bot.get_channel(op.CHANNEL)
-			time.sleep(3)
+			
+      self.lh.fade(IDLE_COLOR)
+      self.lh.clear()
 
 		self.lh.ready()		
 
